@@ -4,15 +4,19 @@
  
  Visual basic 6 adalah bahasa pemrograman populer yang sayangnya sudah tidak diperbarui lagi. Sehingga ada masanya ada hal-hal yang tidak bisa dilakukan atau membutuhkan research yang tinggi untuk diselesaikan dengan visual basic 6. Contohnya adalah decompresi lzstring dan sha256 dnegan mode cbc dengan vi faktor seperti yang digunakan di enkripsi dan kompresi bridging vclaim v2.
  
- Penggunaan:<br>
- Ubah end point di .htaccess sesuai dengan folder web service.
- 
- Masukkan parameter bridging vclaim di file util.php di bagian configvclaim:
-    $consid = "";
-    $secretkey = "";
-    $userkey = "";
-    $url = "https://apijkn-dev.bpjs-kesehatan.go.id/vclaim-rest-dev";
- 
+ Penggunaan:
+ <br>
+ <ol>
+ <li>Ubah end point di .htaccess sesuai dengan folder web service.</li> 
+ <li>Masukkan parameter bridging vclaim di file util.php di bagian configvclaim:
+    <ul>
+     <li>$consid = "";</li>
+     <li>$secretkey = "";</li>
+     <li>$userkey = "";</li>
+     <li>$url = "https://apijkn-dev.bpjs-kesehatan.go.id/vclaim-rest-dev";</li>
+  </ul>
+ </li>
+ </ol>
  source utama service ada di file index.php
  bagian aplikasi:
  routing = definisi endpoint dan mengarahkan endpoint ke fungsi yang sesuai
