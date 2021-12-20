@@ -5,6 +5,8 @@
  Visual basic 6 adalah bahasa pemrograman populer yang sayangnya sudah tidak diperbarui lagi. Sehingga ada masanya ada hal-hal yang tidak bisa dilakukan atau membutuhkan research yang tinggi untuk diselesaikan dengan visual basic 6. Contohnya adalah decompresi lzstring dan sha256 dnegan mode cbc dengan vi faktor seperti yang digunakan di enkripsi dan kompresi bridging vclaim v2.
  
  Penggunaan:
+ Ubah end point di .htaccess sesuai dengan folder web service.
+ 
  Masukkan parameter bridging vclaim di file util.php di bagian configvclaim:
     $consid = "";
     $secretkey = "";
