@@ -19,8 +19,8 @@
  </ol>
  source utama service ada di file index.php
  bagian aplikasi:
- routing = definisi endpoint dan mengarahkan endpoint ke fungsi yang sesuai
- koding = berisi fungsi-fungsi yang dibuat sesuai rouingnya.
+ routing = definisi endpoint dan mengarahkan fungsi di  ke fungsi (di file index.php) yang sesuai
+ index berisi fungsi-fungsi yang digunakan 
  
  
  Fitur web service vclaim v2
