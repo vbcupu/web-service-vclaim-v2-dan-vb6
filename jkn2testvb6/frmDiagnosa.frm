@@ -57,7 +57,7 @@ Private Sub cmdAmbilData_Click()
         Call MsgBox("Text Diagnosa Kosong")
         Exit Sub
     End If
-    url = "http://localhost/jknapi/refdiag"
+    url = "http://localhost/jknapi/referensi/diagnosa"
     tpost = "diagnosa=" & Trim(txtDiagnosa.Text)
     
     Set req = New WinHttp.WinHttpRequest
@@ -67,17 +67,21 @@ Private Sub cmdAmbilData_Click()
     
     If req.Status = "200" Then
       Set p = JSON.parse(req.ResponseText)
-      jmlRecord = p("response").Item("diagnosa").Count
-      fgData.Cols = 3
-      fgData.rows = jmlRecord + 1
-      fgData.TextMatrix(0, 1) = "KODE"
-      fgData.TextMatrix(0, 2) = "DIAGNOSA"
-      fgData.ColWidth(1) = 1000
-      fgData.ColWidth(2) = 3000
-        For i = 1 To jmlRecord
-            fgData.TextMatrix(i, 1) = p("response").Item("diagnosa")(i)("kode")
-            fgData.TextMatrix(i, 2) = p("response").Item("diagnosa")(i)("nama")
-        Next i
+      If p.Item("metaData").Item("code") = "200" Then
+        jmlRecord = p("response").Item("diagnosa").Count
+        fgData.Cols = 3
+        fgData.rows = jmlRecord + 1
+        fgData.TextMatrix(0, 1) = "KODE"
+        fgData.TextMatrix(0, 2) = "DIAGNOSA"
+        fgData.ColWidth(1) = 1000
+        fgData.ColWidth(2) = 3000
+          For i = 1 To jmlRecord
+              fgData.TextMatrix(i, 1) = p("response").Item("diagnosa")(i)("kode")
+              fgData.TextMatrix(i, 2) = p("response").Item("diagnosa")(i)("nama")
+          Next i
+       Else
+            Call MsgBox(p.Item("metaData").Item("message"))
+       End If
    End If
     
     
