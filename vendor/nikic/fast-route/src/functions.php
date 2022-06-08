@@ -9,8 +9,7 @@ if (!function_exists('FastRoute\simpleDispatcher')) {
      *
      * @return Dispatcher
      */
-    function simpleDispatcher(callable $routeDefinitionCallback, array $options = [])
-    {
+    function simpleDispatcher(callable $routeDefinitionCallback, array $options = []) {
         $options += [
             'routeParser' => 'FastRoute\\RouteParser\\Std',
             'dataGenerator' => 'FastRoute\\DataGenerator\\GroupCountBased',
@@ -33,8 +32,7 @@ if (!function_exists('FastRoute\simpleDispatcher')) {
      *
      * @return Dispatcher
      */
-    function cachedDispatcher(callable $routeDefinitionCallback, array $options = [])
-    {
+    function cachedDispatcher(callable $routeDefinitionCallback, array $options = []) {
         $options += [
             'routeParser' => 'FastRoute\\RouteParser\\Std',
             'dataGenerator' => 'FastRoute\\DataGenerator\\GroupCountBased',
@@ -62,12 +60,10 @@ if (!function_exists('FastRoute\simpleDispatcher')) {
 
         /** @var RouteCollector $routeCollector */
         $dispatchData = $routeCollector->getData();
-        if (!$options['cacheDisabled']) {
-            file_put_contents(
-                $options['cacheFile'],
-                '<?php return ' . var_export($dispatchData, true) . ';'
-            );
-        }
+        file_put_contents(
+            $options['cacheFile'],
+            '<?php return ' . var_export($dispatchData, true) . ';'
+        );
 
         return new $options['dispatcher']($dispatchData);
     }
