@@ -8,7 +8,7 @@ service yang tersedia disource ini lumayan banyak karena sudah dipakai implement
 
 # setting consid
 buka file util.php, isi parameter dibawah ini:
-
+<pre>
 function configvclaim()
 {
     $mode = "prod";    
@@ -38,5 +38,6 @@ function configvclaim()
         return $arr;
     }    
 }
+</pre>
 
 
